@@ -14,7 +14,7 @@ services:
       - ./data/pgsql:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: chatbot
-      POSTGRES_PASSWORD: chatbot@sql
+      POSTGRES_PASSWORD: chatbot@sql233
       POSTGRES_DB: chatbot
     ports:
       - "5413:5432"
@@ -25,4 +25,4 @@ services:
     ports:
       - "5193:6379"
     command:
-      --requirepass "chatbot@sql"
+      --requirepass "chatbot@sql233"
