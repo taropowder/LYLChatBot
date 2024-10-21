@@ -1,0 +1,28 @@
+version: '3'
+services:
+  bing_proxy:
+    image: taropowder/lyl_chat_bot
+    command: run
+    volumes:
+      - ./config.yaml:/app/config.yaml
+      - ./storage.json:/app/storage.json
+
+  postgresql:
+    image: postgres
+    restart: always
+    volumes:
+      - ./data/pgsql:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: chatbot
+      POSTGRES_PASSWORD: chatbot@sql
+      POSTGRES_DB: chatbot
+    ports:
+      - "5413:5432"
+  redis:
+    image: redis:latest
+    restart: always
+    container_name: chatbot_redis
+    ports:
+      - "5193:6379"
+    command:
+      --requirepass "chatbot@sql"

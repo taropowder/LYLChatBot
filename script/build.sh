@@ -1,0 +1,1 @@
+CGO_ENABLED=1  GOFLAGS=-buildvcs=false  go build  -o bot  ./cmd
