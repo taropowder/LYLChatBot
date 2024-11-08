@@ -77,7 +77,8 @@ func (h *ImgHandler) Handle(ctx *openwechat.MessageContext) {
 
 		} else {
 			go func() {
-				img, err := utils.GetDouTuImagesByParameters(0, "")
+				//img, err := utils.GetDouTuImagesByParameters(0, "")
+				img, err := utils.GetFaBiaoQingImagesByParameters(0, "")
 				if err != nil {
 					logrus.Error(err)
 					return
@@ -102,7 +103,8 @@ func (h *ImgHandler) Handle(ctx *openwechat.MessageContext) {
 
 	if matches != nil && len(matches) > 1 {
 
-		imgFun := utils.GetDouTuImagesByParameters
+		//imgFun := utils.GetDouTuImagesByParameters
+		imgFun := utils.GetFaBiaoQingImagesByParameters
 
 		search := ""
 
@@ -111,7 +113,8 @@ func (h *ImgHandler) Handle(ctx *openwechat.MessageContext) {
 		imgType := matches[1]
 
 		if imgType == "表情包" {
-			imgFun = utils.GetDouTuImagesByParameters
+			//imgFun = utils.GetDouTuImagesByParameters
+			imgFun = utils.GetFaBiaoQingImagesByParameters
 		} else if imgType == "图片" {
 			imgFun = utils.GetImagesByGoogleSearch
 		} else {
