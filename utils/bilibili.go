@@ -89,7 +89,7 @@ func DealWithBliBli(bid string) string {
 	}
 	if len(plresp.Data) > 0 {
 		for _, data := range plresp.Data {
-			reqUrl = fmt.Sprintf("https://api.bilibili.com/x/player/v2?bvid=%s&cid=%d", bid, data.Cid)
+			reqUrl = fmt.Sprintf("https://api.bilibili.com/x/player/wbi/v2?bvid=%s&cid=%d", bid, data.Cid)
 			respContent := requestWithUa(reqUrl)
 			//logrus.Info(respContent)
 			playerResp := BliBliPlayerResp{}
@@ -129,7 +129,7 @@ func formatSeconds(seconds float64) string {
 }
 
 func requestWithUa(reqUrl string) string {
-	ua := "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+	ua := "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 
 	req, err := http.NewRequest("GET", reqUrl, nil)
 	if err != nil {

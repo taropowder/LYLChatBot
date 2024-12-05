@@ -105,7 +105,7 @@ func (h *UrlSummaryHandler) Handle(ctx *openwechat.MessageContext) {
 				gptFunc = utils.GetUserModuleFunc(u)
 				content = chinese
 			} else {
-				gptFunc = utils.NewBingGpt
+				gptFunc = utils.GetUserModuleFunc(u)
 				systemPrompt = utils.GetRolePrompt(constant.UrlPromptName, constant.UrlDefaultPrompt)
 				content = fmt.Sprintf("我的链接是 %s ， 请你帮我总结这个链接的内容\n", messageUrl)
 			}
