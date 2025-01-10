@@ -8,7 +8,7 @@ require (
 	github.com/PuerkitoBio/goquery v1.8.1
 	github.com/chromedp/cdproto v0.0.0-20240721024200-dac8efcb39ce
 	github.com/chromedp/chromedp v0.9.5
-	github.com/eatmoreapple/openwechat v1.4.6
+	github.com/eatmoreapple/openwechat v1.4.10
 	github.com/gin-gonic/gin v1.9.1
 	github.com/gomodule/redigo v1.8.9
 	github.com/google/generative-ai-go v0.7.1-0.20240216182036-74df65485a93
